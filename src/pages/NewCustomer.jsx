@@ -1,31 +1,30 @@
 import { useNavigate } from "react-router-dom";
 
-export const NewProduct = () => {
+export const NewCustomer = () => {
 
     const navigate = useNavigate();
     return (
        <div className="p-5 content bg-whitesmoke text-center">
-            <h2>Új Product</h2>
+            <h2>Új Customer</h2>
             <form
             onSubmit={(event) => {
-
+                
             event.persist();
             event.preventDefault();
-            fetch(`http://localhost:5198/api/Products`, {
+            fetch(`http://localhost:5198/api/Customers`, {
                 method: "POST",
-
                 headers: {
                     'Content-Type': 'application/json',
                 },
+
                 body: JSON.stringify({
                     name: event.target.elements.name.value,
                     image_url: event.target.elements.kepurl.value,
                 }),
             })
-
             .then(() =>
             {
-                navigate("/products");
+                navigate("/customers");
             })
             .catch(console.log);
             }}>
@@ -51,4 +50,4 @@ export const NewProduct = () => {
     );
 }
 
-export default NewProduct;
+export default NewCustomer;

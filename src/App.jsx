@@ -4,6 +4,8 @@ import Customers from './pages/Customers'
 import Carts from './pages/Carts'
 import Products from './pages/Products'
 import Index from './pages/Index'
+import OneCustomer from './pages/OneCustomer'
+import OneProduct from './pages/OneProduct'
 
 export const App = () => {
 

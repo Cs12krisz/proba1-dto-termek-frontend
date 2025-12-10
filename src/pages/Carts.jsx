@@ -1,5 +1,35 @@
+import { useState, useEffect } from "react"
+
+const CartsComponent = ({elemek}) => {
+    return (
+        <div>
+    {elemek.map((elem, index) => (
+     <div className="card" key={index}>
+        <div className="card-body">
+            <h4 className="card-title">{elem.name}</h4>
+        </div>
+    </div>
+      
+    ))}
+</div>
+    )
+}
+
 function Carts() {
-    
+            const [adatok, setAdatok] = useState([])
+        
+            useEffect(() => {
+                fetch("http://localhost:5198/api/Cart")
+                .then((response) => (response.ok ? response.json() : []))
+                .then((tartalom) => setAdatok(tartalom))
+            })
+        
+            return (
+                <>
+                <h1>Products</h1>
+                <CartsComponent elemek={adatok}></CartsComponent>
+                </>
+            )
 }
 
 export default Carts

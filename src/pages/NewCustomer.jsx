@@ -8,7 +8,7 @@ export const NewCustomer = () => {
             <h2>Új Customer</h2>
             <form
             onSubmit={(event) => {
-                
+
             event.persist();
             event.preventDefault();
             fetch(`http://localhost:5198/api/Customers`, {
@@ -19,7 +19,6 @@ export const NewCustomer = () => {
 
                 body: JSON.stringify({
                     name: event.target.elements.name.value,
-                    image_url: event.target.elements.kepurl.value,
                 }),
             })
             .then(() =>
@@ -32,12 +31,6 @@ export const NewCustomer = () => {
                 <label className="col-sm-3 col-form-label">Pizza név:</label>
                 <div className="col-sm-9">
                 <input type="text" name="name" className="form-control" />
-                </div>
-            </div>
-            <div className="form-group row pb-3">
-                <label className="col-sm-3 col-form-label">Kép URL-je:</label>
-                <div className="col-sm-9">
-                <input type="text" name="kepurl" className="form-control" />
                 </div>
             </div>
             <button type="submit" className="btn btn-success">

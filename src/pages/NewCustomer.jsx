@@ -28,7 +28,7 @@ export const NewCustomer = () => {
             .catch(console.log);
             }}>
             <div className="form-group row pb-3">
-                <label className="col-sm-3 col-form-label">Pizza név:</label>
+                <label className="col-sm-3 col-form-label">Customer név:</label>
                 <div className="col-sm-9">
                 <input type="text" name="name" className="form-control" />
                 </div>

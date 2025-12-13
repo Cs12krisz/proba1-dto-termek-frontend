@@ -20,6 +20,7 @@ export const NewProduct = () => {
                 body: JSON.stringify({
                     name: event.target.elements.name.value,
                     price: event.target.elements.price.value,
+                    cartItems: null
                 }),
             })
 

@@ -19,6 +19,7 @@ export const NewCustomer = () => {
 
                 body: JSON.stringify({
                     name: event.target.elements.name.value,
+                    cartItems: null
                 }),
             })
             .then(() =>
